@@ -30,6 +30,7 @@ public class MainActivity extends ActionBarActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         int score = data.getIntExtra("score", 0);
         String dialog_title = getResources().getString(R.string.dialog_title);
         String dialog_close = getResources().getString(R.string.dialog_close);
@@ -45,8 +46,7 @@ public class MainActivity extends ActionBarActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.cancel();
                             }
-                        })
-                .setCancelable(false);
+                        });
         AlertDialog dialog = builder.create();
         dialog.show();
     }
